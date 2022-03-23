@@ -17,6 +17,9 @@
 import axios from 'axios'
 
   export default{
+
+    emits:['redirectToChatRoom'],
+
     data(){
       return{
         name:'',
@@ -40,7 +43,13 @@ import axios from 'axios'
           if(!res){
             throw new Error('アカウントを登録できませんでした')
           }
+
+          if(!this.error){
+            this.$emit('redirectToChatRoom')
+          }
+
           console.log({ res })
+          
           return res
         }catch(error){
           this.error = 'アカウントを登録できませんでした'

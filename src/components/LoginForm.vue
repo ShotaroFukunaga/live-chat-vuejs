@@ -14,6 +14,7 @@
 <script>
 import axios from 'axios'
 export default{
+  emits:['redirectToChatRoom'],
   data(){
     return {
       email:'',
@@ -21,12 +22,10 @@ export default{
       error: null
     }
   },
-
   methods:{
     async login(){
       try{
         this.error = null
-
         const res = await axios.post('http://localhost:3000/auth/sign_in',{
           email: this.email,
           password: this.password,
@@ -35,12 +34,14 @@ export default{
         if(!res){
           throw new Error('メールアドレスかパスワードが違います')
         }
-
+        if(!this.error){
+          this.$emit('redirectToChatRoom')
+        }
         console.log({ res })
         return res
       }catch(error){
-      console.log({ error })
-      this.error = 'メールアドレスかパスワードが違います'
+        console.log({ error })
+        this.error = 'メールアドレスかパスワードが違います'
       }
     }
   }

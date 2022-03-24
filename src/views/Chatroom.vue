@@ -2,7 +2,7 @@
 <template>
   <div class="container">
     <Navbar/>
-    <ChatWindow :message="messages"/>
+    <ChatWindow :messages="messages"/>
   </div>
 </template>
 

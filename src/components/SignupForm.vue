@@ -15,6 +15,7 @@
 
 <script>
 import axios from 'axios'
+import setItem from '../auth/setItem'
 
   export default{
 
@@ -45,11 +46,12 @@ import axios from 'axios'
           }
 
           if(!this.error){
+            setItem(res.headers,res.data.data.name)
             this.$emit('redirectToChatRoom')
           }
 
           console.log({ res })
-          
+
           return res
         }catch(error){
           this.error = 'アカウントを登録できませんでした'

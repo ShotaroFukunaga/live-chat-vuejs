@@ -39,8 +39,8 @@
     display:inline-block;
     clear: both;
   }
-  .recevid .message{
-    background: #eee;
+  .recevid.message{
+    background: rgb(145, 116, 116);
     padding: 10px;
     display: inline-block;
     border-radius: 30px;
@@ -53,8 +53,8 @@
   .sent{
     float: right;
   }
-  .sent .message{
-    background: #677bb4;
+  .sent.message{
+    background: #355dc2;
     color: white;
     padding: 10px;
     display: inline-block;

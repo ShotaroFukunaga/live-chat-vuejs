@@ -46,7 +46,7 @@ export default{
     }
   },
   mounted(){
-    const cable = ActionCable.createdConsumer('ws://localhost:3000/cable')
+    const cable = ActionCable.createConsumer('ws://localhost:3000/cable')
     this.messageChannel = cable.subscriptions.create('RoomChannel',{
       connected:() => {
         this.getMessages()
@@ -57,7 +57,7 @@ export default{
     })
   },
   beforeUnmount(){
-    this.messageChannel.unsubscrible()
+    this.messageChannel.unsubscribe()
   }
 }
 </script>

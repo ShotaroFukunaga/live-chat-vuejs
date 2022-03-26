@@ -3,7 +3,7 @@
   <div class="chat-window">
     <div v-if="messages" class="messages">
       <ul v-for="message in messages" :key="message.id">
-        <li class="{ received: message.email !== uid, sent: message.email === uid }">
+        <li :class="{ received: message.email !== uid, sent: message.email === uid }">
           <span class="name">{{ message.name }}</span>
           <span class="message">{{ message.content }}</span>
           <span class="created-at">{{ message.created_at }}</span>
@@ -39,8 +39,8 @@
     display:inline-block;
     clear: both;
   }
-  .recevid.message{
-    background: rgb(145, 116, 116);
+  .received .message{
+    background: rgb(160, 155, 155);
     padding: 10px;
     display: inline-block;
     border-radius: 30px;
@@ -53,7 +53,7 @@
   .sent{
     float: right;
   }
-  .sent.message{
+  .sent .message{
     background: #355dc2;
     color: white;
     padding: 10px;

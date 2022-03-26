@@ -13,7 +13,7 @@
     emits:[ 'connectCable' ],
     data(){
       return{
-        massage:""
+        massage:''
       }
     },
     methods:{

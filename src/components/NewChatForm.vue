@@ -1,15 +1,15 @@
 <template>
   <form>
     <textarea
-    placeholder="メッセージを入力してEnterを押してください"
-    v-model="message"
-    @keypress.enter.prevent = "handleSubmit"
+      placeholder="メッセージを入力してEnterを押してください"
+      v-model="message"
+      @keypress.enter.prevent = "handleSubmit"
     ></textarea>
   </form>
 </template>
 
 <script>
-  export default{
+  export default {
     emits:[ 'connectCable' ],
     data(){
       return{

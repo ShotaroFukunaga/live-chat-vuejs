@@ -13,6 +13,7 @@ import ChatWindow from '../components/ChatWindow'
 import NewChatForm from '../components/NewChatForm'
 import axios from 'axios'
 import ActionCable from 'actioncable'
+
 export default{
   components:{ Navbar, ChatWindow, NewChatForm },
   data(){
@@ -35,7 +36,7 @@ export default{
         }
         this.messages = res.data
       }catch(err){
-        console.log(err)
+        this.error = 'メッセージ一覧を取得できませんでした'
       }
     },
     connectCable(message){

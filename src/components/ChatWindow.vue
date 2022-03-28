@@ -11,6 +11,7 @@
               <font-awesome-icon icon="heart" class="heart"/>
               <span class="heart-count">{{ message.likes.length }}</span>
             </div>
+            {{ message.likes.length }}
           </div>
           <span class="created-at">{{ message.created_at }}</span>
         </li>
@@ -25,12 +26,12 @@
 
   export default{
     props:['messages'],
-    
     data(){
       return{
         uid:localStorage.getItem('uid')
       }
     },
+
     methods:{
       async createLike(messageId){
         try{

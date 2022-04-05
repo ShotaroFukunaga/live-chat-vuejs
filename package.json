@@ -10,7 +10,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
-    "@fortawesome/vue-fontawesome": "^2.0.6",
+    "@fortawesome/vue-fontawesome": "^3.0.0-5",
     "actioncable": "^5.2.7",
     "axios": "^0.26.1",
     "core-js": "^3.8.3",
@@ -41,8 +41,7 @@
       "parser": "@babel/eslint-parser"
     },
     "rules": {
-      "vue/multi-word-component-names": "off",
-      "no-unused-vars": "off"
+      "vue/multi-word-component-names": "off"
     }
   },
   "browserslist": [
